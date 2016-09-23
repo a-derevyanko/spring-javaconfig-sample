@@ -73,7 +73,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     @Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
     public UserDetails authenticatedUserDetails() {
-        SecurityContextHolder.getContext().getAuthentication();
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null) {
             if (authentication instanceof UsernamePasswordAuthenticationToken) {
